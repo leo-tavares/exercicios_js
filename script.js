@@ -13,3 +13,9 @@ btnDobra.onclick = function () {
   var result = getNumericInputValue() * 2;
   setNumeticInputValue(result);
 };
+
+var btnMetade = document.getElementById("btn-metade");
+btnMetade.onclick = function () {
+	var result = getNumericInputValue() / 2;
+	setNumeticInputValue(result);
+};
