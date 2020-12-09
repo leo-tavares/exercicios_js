@@ -19,3 +19,9 @@ btnMetade.onclick = function () {
 	var result = getNumericInputValue() / 2;
 	setNumeticInputValue(result);
 };
+
+var btnPow = document.getElementById("btn-elevar-ao-quadrado");
+btnPow.onclick = function () {
+	var result = Math.pow(getNumericInputValue(), 2);
+	setNumeticInputValue(result);
+};
