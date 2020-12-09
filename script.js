@@ -25,3 +25,9 @@ btnPow.onclick = function () {
 	var result = Math.pow(getNumericInputValue(), 2);
 	setNumeticInputValue(result);
 };
+
+var btnSqrt = document.getElementById("btn-raiz-quadrada");
+btnSqrt.onclick = function () {
+	var result = Math.sqrt(getNumericInputValue(), 2);
+	setNumeticInputValue(result);
+};
