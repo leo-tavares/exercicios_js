@@ -1,7 +1,7 @@
 function getCharCodeListFromMessage(message) {
   var charCodeList = [];
-  for (let index = 0; index < message.length; index++) {
-    const charCode = message[index].charCodeAt();
+  for (var index = 0; index < message.length; index++) {
+    var charCode = message[index].charCodeAt();
     charCodeList.push(charCode);
   }
   return charCodeList;
@@ -9,8 +9,8 @@ function getCharCodeListFromMessage(message) {
 
 function getShiftedMessage(shift, charCodeList) {
   var shiftedMessage = [];
-  for (let index = 0; index < charCodeList.length; index++) {
-    const charCode = charCodeList[index];
+  for (var index = 0; index < charCodeList.length; index++) {
+    var charCode = charCodeList[index];
     shiftedMessage.push(charCode + shift);
   }
   return shiftedMessage;
@@ -18,8 +18,8 @@ function getShiftedMessage(shift, charCodeList) {
 
 function transformCharCodeListIntoString(charCodeList) {
   var msg = "";
-  for (let index = 0; index < charCodeList.length; index++) {
-    const charCode = charCodeList[index];
+  for (var index = 0; index < charCodeList.length; index++) {
+    var charCode = charCodeList[index];
     msg += String.fromCharCode(charCode);
   }
   return msg;
