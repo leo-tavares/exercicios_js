@@ -33,10 +33,10 @@ function caesarCipher(shift, message) {
 }
 
 var userMsg = prompt("Informe a menssagem para encriptar");
-var userShift = parseInt(prompt("Infor o deslocamento"));
+var userShift = parseInt(prompt("e qual o deslocamento?\n Informe apenas números"));
 
 var encryptedMessage = caesarCipher(userShift, userMsg);
 var decryptedMessage = caesarCipher(-userShift, encryptedMessage);
 
-console.log(`${userMsg} codificado => ${encryptedMessage}`);
+console.log(`${userMsg} codificado com deslocamento ${userShift} => ${encryptedMessage}`);
 console.log(`${encryptedMessage} decodificada => ${decryptedMessage}`);
