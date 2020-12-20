@@ -1,42 +1,42 @@
-function getCharCode(str) {
-  var charCode = [];
-  for (let index = 0; index < str.length; index++) {
-    const code = str[index].charCodeAt();
-    charCode.push(code);
+function getCharCodeListFromMessage(message) {
+  var charCodeList = [];
+  for (let index = 0; index < message.length; index++) {
+    const charCode = message[index].charCodeAt();
+    charCodeList.push(charCode);
   }
-  return charCode;
+  return charCodeList;
 }
 
-function deslocaMenssagem(deslocamento, messagem) {
-  var messagemDeslocada = [];
-  for (let index = 0; index < messagem.length; index++) {
-    const code = messagem[index];
-    messagemDeslocada.push(code + deslocamento);
+function getShiftedMessage(shift, charCodeList) {
+  var shiftedMessage = [];
+  for (let index = 0; index < charCodeList.length; index++) {
+    const charCode = charCodeList[index];
+    shiftedMessage.push(charCode + shift);
   }
-  return messagemDeslocada;
+  return shiftedMessage;
 }
 
-function transformCharCodeInString(charCodeList) {
+function transformCharCodeListIntoString(charCodeList) {
   var msg = "";
   for (let index = 0; index < charCodeList.length; index++) {
-    const code = charCodeList[index];
-    msg += String.fromCharCode(code);
+    const charCode = charCodeList[index];
+    msg += String.fromCharCode(charCode);
   }
   return msg;
 }
 
-function cifraDeCesar(deslocamento, mensagem) {
-  var charCodeOfMessage = getCharCode(mensagem);
-  var charCodeDeslocado = deslocaMenssagem(deslocamento, charCodeOfMessage);
-  var mensagemAlterada = transformCharCodeInString(charCodeDeslocado);
-  return mensagemAlterada;
+function caesarCipher(shift, message) {
+  var charCodeList = getCharCodeListFromMessage(message);
+  var shiftedMessage = getShiftedMessage(shift, charCodeList);
+  var encryptedMessage = transformCharCodeListIntoString(shiftedMessage);
+  return encryptedMessage;
 }
 
-var userMsg = prompt("Informe a msg");
-var userDeslocamento = parseInt(prompt("Infor o deslocamento"));
+var userMsg = prompt("Informe a menssagem para encriptar");
+var userShift = parseInt(prompt("Infor o deslocamento"));
 
-var msgCodificada = cifraDeCesar(userDeslocamento, userMsg);
-var msgDecodificada = cifraDeCesar(-userDeslocamento, msgCodificada);
+var encryptedMessage = caesarCipher(userShift, userMsg);
+var decryptedMessage = caesarCipher(-userShift, encryptedMessage);
 
-console.log(`${userMsg} codificado => ${msgCodificada}`);
-console.log(`${msgCodificada} decodificada => ${msgDecodificada}`);
+console.log(`${userMsg} codificado => ${encryptedMessage}`);
+console.log(`${encryptedMessage} decodificada => ${decryptedMessage}`);
