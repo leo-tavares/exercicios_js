@@ -10,22 +10,22 @@
     <button id="meu-botao">me aperte</button>
     <button id="btn-2"> Botão 2 </button>
     <script>
-        
-        function getValorDoInput(){
-            var input = document.getElementById("meu-input");
+        var input = document.getElementById("meu-input");
+
+        //é interessante fazermos isso pois o valor é dinâmico
+        function getValorDoInput(input){
             return input.value;
         }
 
         var botao = document.getElementById("meu-botao");
         botao.onclick = function printValorDoInput(){
-            console.log(`Valor do meu input ${getValorDoInput()}`);
+            console.log(`Valor do meu input ${getValorDoInput(input)}`);
         }
         
         var botao2 = document.getElementById("btn-2");
-
         botao2.onclick = function jogaValorNoP(){
             var p = document.createElement("p");
-            p.innerText = getValorDoInput();
+            p.innerText = getValorDoInput(input);
             document.body.append(p);
         }
 
